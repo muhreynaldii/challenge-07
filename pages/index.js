@@ -2,6 +2,7 @@ import Image from "next/image";
 import Head from "next/head";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import Container from "@components/Container";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -37,7 +38,7 @@ export default function Home() {
         <title>Home &mdash; Binar Car Rental</title>
       </Head>
       <section className="h-[500px] w-full bg-slate-200">
-        <div className="container mx-auto">
+        <Container>
           <div className="mx-auto flex items-center py-4">
             <div className="w-3/5">
               <Image
@@ -91,7 +92,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
       <section className="container mx-auto flex w-full py-24">
         <div className="flex w-3/5 justify-center">
@@ -239,14 +240,16 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="mx-auto flex h-96 w-1/4 justify-center">
+      <section className="container mx-auto flex h-96 w-1/4 justify-center">
         <Pie data={data} />
       </section>
       <section className="my-24">
-        <h1 className="pb-4 text-center text-2xl">Testimonial</h1>
-        <p className="text-center text-sm">
-          Berbagai review positif dari para pelanggan kami
-        </p>
+        <Container>
+          <h1 className="pb-4 text-center text-2xl">Testimonial</h1>
+          <p className="text-center text-sm">
+            Berbagai review positif dari para pelanggan kami
+          </p>
+        </Container>
       </section>
     </>
   );
