@@ -3,7 +3,7 @@ import Bars from "@components/Bars";
 import Link from "next/link";
 import Image from "next/image";
 
-function Listcars() {
+function listcars() {
   return (
     <>
       <Head>
@@ -13,16 +13,18 @@ function Listcars() {
         <div className="flex justify-between">
           <h1 className="text-xl font-medium">List cars</h1>
           <Link href="/listcars/addcars">
-            <button className="flex items-center rounded-sm bg-dark-blue-04 py-2 px-3 text-sm font-bold text-white">
-              <Image
-                src="/fi-plus.png"
-                alt="icon-users"
-                layout="fixed"
-                width={18}
-                height={18}
-              />
-              Add New Car
-            </button>
+            <a>
+              <button className="flex items-center rounded-sm bg-dark-blue-04 py-2 px-3 text-sm font-bold text-white">
+                <Image
+                  src="/fi-plus.png"
+                  alt="icon-users"
+                  layout="fixed"
+                  width={18}
+                  height={18}
+                />
+                Add New Car
+              </button>
+            </a>
           </Link>
         </div>
         <div className="flex space-x-4 pt-6">
@@ -43,14 +45,17 @@ function Listcars() {
           <div className="h-[482px] w-[351px] rounded-lg border bg-white p-6">
             <div className="p-4">
               <Link href="/detailcars">
-                <Image
-                  src="/fi-car.png"
-                  alt="car-card"
-                  layout="fixed"
-                  width={270}
-                  height={160}
-                  className="cursor-pointer"
-                />
+                <a>
+                  <Image
+                    src="/fi-car.png"
+                    alt="car-card"
+                    layout="fixed"
+                    width={270}
+                    height={160}
+                    className="cursor-pointer"
+                    priority
+                  />
+                </a>
               </Link>
             </div>
             <p className="font-sm pt-4">Nama/Tipe Mobil</p>
@@ -106,4 +111,4 @@ function Listcars() {
   );
 }
 // @refresh reset
-export default Listcars;
+export default listcars;
