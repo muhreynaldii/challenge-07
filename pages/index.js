@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Container from "@components/Container";
+import Link from "next/link";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -75,10 +76,14 @@ export default function Home() {
                 kualitas terbaik dengan harga terjangkau. Selalu siap melayani
                 kebutuhanmu untuk sewa mobil selama 24 jam.
               </p>
-              <button className="rounded bg-green-400 p-2 font-medium text-white">
-                {" "}
-                Mulai Sewa Mobil
-              </button>
+              <Link href="/listcars">
+                <a>
+                  <button className="rounded bg-green-400 p-2 font-medium text-white">
+                    {" "}
+                    Mulai Sewa Mobil
+                  </button>
+                </a>
+              </Link>
             </div>
             <div className="w-1/2">
               <div className="absolute right-0">

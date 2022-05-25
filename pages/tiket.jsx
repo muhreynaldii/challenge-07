@@ -1,8 +1,14 @@
-import React from "react";
 import Container from "@components/Container";
 import Image from "next/image";
+import { Viewer, Worker } from "@react-pdf-viewer/core";
+import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
+import { getFilePlugin } from "@react-pdf-viewer/get-file";
 
 function tiket() {
+  const defaultLayoutPluginInstance = defaultLayoutPlugin();
+  const getFilePluginInstance = getFilePlugin();
+  const { Download } = getFilePluginInstance;
+
   return (
     <>
       <section className="h-[166px] w-full bg-slate-200">
@@ -50,13 +56,28 @@ function tiket() {
           Tunjukkan invoice ini ke petugas BCR di titik temu.
         </p>
       </div>
-      <div className="mx-auto h-[290px] w-[605px] rounded-lg bg-white p-6 shadow">
+      <div className="mx-auto w-[605px] rounded-lg bg-white p-6 shadow">
         <div className="flex justify-between">
           <h1 className="text-sm font-bold">Invoice</h1>
-          <button className="flex w-[97px] items-center justify-center rounded-sm border border-dark-blue-04 py-2 px-3 font-bold text-dark-blue-04">
-            <i className="h-full w-full bg-[url('/fi-download.png')] bg-left bg-no-repeat bg-origin-content"></i>
-            Unduh
-          </button>
+          <Download>
+            {(RenderDownloadProps) => (
+              <button
+                className="flex w-[97px] items-center justify-center rounded-sm border border-dark-blue-04 py-2 px-3 font-bold text-dark-blue-04"
+                onClick={RenderDownloadProps.onClick}
+              >
+                <i className="h-full w-full bg-[url('/fi-download.png')] bg-left bg-no-repeat bg-origin-content"></i>
+                Unduh
+              </button>
+            )}
+          </Download>
+        </div>
+        <div className="h-full w-full py-6">
+          <Worker workerUrl="https://unpkg.com/pdfjs-dist@2.12.313/build/pdf.worker.js">
+            <Viewer
+              fileUrl="/pdf/document.pdf"
+              plugins={[defaultLayoutPluginInstance, getFilePluginInstance]}
+            />
+          </Worker>
         </div>
       </div>
     </>

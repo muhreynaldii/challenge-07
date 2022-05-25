@@ -1,6 +1,8 @@
 import React from "react";
 import Container from "@components/Container";
 import Image from "next/image";
+import ModalImage from "react-modal-image";
+import Link from "next/link";
 
 function detailcars() {
   return (
@@ -125,13 +127,14 @@ function detailcars() {
         </div>
         <div className="h-[435px] w-1/3 rounded-lg border border-slate-200 shadow-sm">
           <div className="px-16 pt-7">
-            <Image
-              src="/fi-car.png"
-              alt="car-card"
-              layout="fixed"
-              width={270}
-              height={160}
+            <ModalImage
+              small={"/fi-car.png"}
+              medium={"/fi-car.png"}
+              large={"/fi-car-large.png"}
+              showRotate={true}
+              imageBackgroundColor={"white"}
             />
+            ;
           </div>
           <div className="px-6">
             <h1 className="pt-4 pb-1 text-sm font-bold">Nama/Tipe Mobil</h1>
@@ -167,9 +170,13 @@ function detailcars() {
               <p>Total</p>
               <p className="font-bold">Rp 430.000</p>
             </div>
-            <button className="mt-6 w-full bg-lime-green-04 py-2 px-3 text-center font-bold text-white">
-              Lanjutkan Pembayaran
-            </button>
+            <Link href="/tiket">
+              <a>
+                <button className="mt-6 w-full bg-lime-green-04 py-2 px-3 text-center font-bold text-white">
+                  Lanjutkan Pembayaran
+                </button>
+              </a>
+            </Link>
           </div>
         </div>
       </div>
