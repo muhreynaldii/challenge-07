@@ -144,6 +144,7 @@ function Index() {
             ) : (
               <ModalImage
                 small={searchData.image}
+                medium={searchData.image}
                 showRotate={true}
                 imageBackgroundColor={"white"}
               />

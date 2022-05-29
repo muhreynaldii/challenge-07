@@ -14,7 +14,7 @@ function Tiket() {
       <section className="h-[166px] w-full bg-slate-200">
         <Container>
           <div className="flex items-center py-4">
-            <div className="w-3/5">
+            <div className="w-3/5 pl-2 md:pl-0">
               <Image
                 src="/logo-biru.png"
                 alt="logo biru"
@@ -23,7 +23,7 @@ function Tiket() {
                 height={34}
               />
             </div>
-            <div className="flex w-2/5">
+            <div className="hidden md:flex md:w-2/5">
               <ul className="text-md flex flex-row items-center space-x-8 font-medium">
                 <li>Our Service</li>
                 <li>Why Us</li>
@@ -56,7 +56,7 @@ function Tiket() {
           Tunjukkan invoice ini ke petugas BCR di titik temu.
         </p>
       </div>
-      <div className="mx-auto mb-10 w-[605px] rounded-lg bg-white p-6 shadow">
+      <div className="mx-auto mb-10 w-3/4 rounded-lg bg-white p-6 shadow sm:w-[605px]">
         <div className="flex justify-between">
           <h1 className="text-sm font-bold">Invoice</h1>
           <Download>

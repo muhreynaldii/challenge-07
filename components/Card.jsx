@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,15 +9,7 @@ function Card({ id, name, image, price }) {
       <div className="p-4">
         <Link href={`/detailcars/${id}`}>
           <a>
-            <Image
-              src={image}
-              alt="car-card"
-              layout="fixed"
-              width={270}
-              height={160}
-              className="cursor-pointer"
-              priority
-            />
+            <img src={image} alt="image-car" />
           </a>
         </Link>
       </div>

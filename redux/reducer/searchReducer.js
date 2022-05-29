@@ -1,4 +1,4 @@
-import { GET_SEARCH } from "@redux/types";
+import { GET_SEARCH, POST_CARS } from "@redux/types";
 
 const initialState = {
   data: [],
@@ -20,6 +20,22 @@ const searchReducer = (state = initialState, action) => {
         isLoading: false,
       };
     case `${GET_SEARCH}_ERROR`:
+      return {
+        ...state,
+        isLoading: false,
+        error: error,
+      };
+    case `${POST_CARS}_LOADING`:
+      return {
+        ...state,
+      };
+    case `${POST_CARS}_FULFILLED`:
+      return {
+        ...state,
+        data: payload,
+        isLoading: false,
+      };
+    case `${POST_CARS}_ERROR`:
       return {
         ...state,
         isLoading: false,

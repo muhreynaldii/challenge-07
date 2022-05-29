@@ -6,7 +6,7 @@ function Bars({ children }) {
   return (
     <>
       <div className="absolute left-16 top-0 right-0 flex h-16 items-center bg-white py-4 px-6 shadow-md">
-        <div className="w-1/5">
+        <div className="hidden w-1/5 lg:block">
           <Image
             src="/logo-dashboard.png"
             alt=""
@@ -67,7 +67,7 @@ function Bars({ children }) {
               height={38}
             />
           </div>
-          <h1>User</h1>
+          <h1>Admin</h1>
           <div className="ml-2">
             <Image
               src="/fi-chevron-down.png"
@@ -82,7 +82,7 @@ function Bars({ children }) {
       <div className="flex">
         <div className="flex w-1/5 ">
           <div className="h-screen w-1/5 justify-center bg-blue-700">
-            <div className="px-4 py-3">
+            <div className="hidden px-4 py-3 lg:block">
               <Image
                 src="/logo-square.png"
                 alt=""
@@ -127,9 +127,7 @@ function Bars({ children }) {
             </div>
           </div>
         </div>
-        <div className="h-[1000px] w-4/5 bg-slate-200 px-4 pt-24">
-          {children}
-        </div>
+        <div className="h-full w-4/5 bg-slate-200 px-4 pt-24">{children}</div>
       </div>
     </>
   );

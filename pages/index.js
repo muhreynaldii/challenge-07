@@ -5,6 +5,8 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import Container from "@components/Container";
 import Link from "next/link";
 
+// @refresh reset
+
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
@@ -38,10 +40,10 @@ export default function Home() {
       <Head>
         <title>Home &mdash; Binar Car Rental</title>
       </Head>
-      <section className="h-[500px] w-full bg-slate-200">
+      <section className="h-full w-full bg-dark-blue-01 md:h-[500px]">
         <Container>
           <div className="mx-auto flex items-center py-4">
-            <div className="w-3/5">
+            <div className="w-3/5 pl-2 md:pl-0">
               <Image
                 src="/logo-biru.png"
                 alt="logo biru"
@@ -50,28 +52,25 @@ export default function Home() {
                 height={34}
               />
             </div>
-            <div className="flex w-2/5">
+            <div className="hidden md:flex md:w-2/5">
               <ul className="text-md flex flex-row items-center space-x-8 font-medium">
                 <li>Our Service</li>
                 <li>Why Us</li>
                 <li>Testimonial</li>
                 <li>FAQ</li>
               </ul>
-              <button
-                className="mx-4 rounded bg-red-600 p-2 font-medium text-white"
-                onClick={() => handleLogout()}
-              >
+              <button className="mx-4 rounded bg-red-600 p-2 font-medium text-white">
                 {" "}
                 Logout
               </button>
             </div>
           </div>
-          <div className="mx-auto flex py-4">
-            <div className="flex h-96 w-1/2 flex-col items-start justify-center space-y-4">
-              <h6 className="my-1 text-4xl font-bold text-black">
+          <div className="mx-auto block py-4 md:flex">
+            <div className="flex h-96 w-full flex-col items-center justify-center space-y-4 p-2 md:items-start md:p-0 xl:w-1/2">
+              <h6 className="my-1 text-center text-2xl font-bold text-black md:text-left md:text-4xl">
                 Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
               </h6>
-              <p>
+              <p className="text-center md:text-left">
                 Selamat datang di Binar Car Rental. Kami menyediakan mobil
                 kualitas terbaik dengan harga terjangkau. Selalu siap melayani
                 kebutuhanmu untuk sewa mobil selama 24 jam.
@@ -85,8 +84,8 @@ export default function Home() {
                 </a>
               </Link>
             </div>
-            <div className="w-1/2">
-              <div className="absolute right-0">
+            <div className="w-full xl:w-1/2">
+              <div className="block xl:absolute xl:right-0">
                 <Image
                   src="/img-car.png"
                   alt="Hero image"
@@ -99,8 +98,8 @@ export default function Home() {
           </div>
         </Container>
       </section>
-      <section className="container mx-auto flex w-full py-24">
-        <div className="flex w-3/5 justify-center">
+      <section className="container mx-auto block w-full py-24 lg:flex">
+        <div className="flex w-full justify-center lg:w-3/5">
           <Image
             src="/img-service.png"
             alt="service image"
@@ -109,7 +108,7 @@ export default function Home() {
             height={428}
           />
         </div>
-        <div className="w-2/5">
+        <div className="w-full lg:w-2/5">
           <h1 className="text-2xl">
             Best Car Rental for any kind of trip in (Lokasimu)!
           </h1>
@@ -186,8 +185,8 @@ export default function Home() {
       <section className="container mx-auto h-96">
         <h1 className="text-2xl font-bold">Why Us?</h1>
         <p className="pt-4 text-sm">Mengapa harus pilih Binar Car Rental?</p>
-        <div className="flex space-x-6 pt-10">
-          <div className="w-1/4 rounded-lg border border-gray-400 p-4">
+        <div className="block pt-10 md:mb-0 md:flex md:space-x-6">
+          <div className="m-2 w-full rounded-lg border border-gray-400 p-4 md:w-1/4">
             <Image
               src="/icon-complete.png"
               alt="complete icon"
@@ -201,7 +200,7 @@ export default function Home() {
               terawat
             </p>
           </div>
-          <div className="w-1/4 rounded-lg border border-gray-400 p-4">
+          <div className="m-2 w-full rounded-lg border border-gray-400 p-4 md:w-1/4">
             <Image
               src="/icon-price.png"
               alt="price icon"
@@ -215,7 +214,7 @@ export default function Home() {
               mobil lain
             </p>
           </div>
-          <div className="w-1/4 rounded-lg border border-gray-400 p-4">
+          <div className="m-2 w-full rounded-lg border border-gray-400 p-4 md:w-1/4">
             <Image
               src="/icon-24hrs.png"
               alt="24hrs icon"
@@ -229,7 +228,7 @@ export default function Home() {
               tersedia di akhir minggu
             </p>
           </div>
-          <div className="w-1/4 rounded-lg border border-gray-400 p-4">
+          <div className="m-2 w-full rounded-lg border border-gray-400 p-4 md:w-1/4">
             <Image
               src="/icon-professional.png"
               alt="professional icon"
@@ -245,12 +244,17 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="container mx-auto flex h-96 w-1/4 justify-center">
-        <Pie data={data} />
+      <section className="mx-auto mt-28 flex h-3/4 w-3/4 items-center justify-center md:mt-24 md:w-1/2 lg:w-1/4">
+        <div className="mt-96 md:mt-0">
+          <h1 className="text-center text-2xl font-bold">
+            Chart Mobil Terjual
+          </h1>
+          <Pie data={data} />
+        </div>
       </section>
-      <section className="my-24">
+      <section className="my-32 md:my-24">
         <Container>
-          <h1 className="pb-4 text-center text-2xl">Testimonial</h1>
+          <h1 className="pb-4 text-center text-2xl font-bold">Testimonial</h1>
           <p className="text-center text-sm">
             Berbagai review positif dari para pelanggan kami
           </p>
