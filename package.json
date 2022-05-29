@@ -9,11 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@pdftron/webviewer": "^8.5.0",
     "@react-pdf-viewer/core": "^3.3.2",
     "@react-pdf-viewer/default-layout": "^3.3.2",
     "@react-pdf-viewer/get-file": "^3.3.2",
-    "blob": "^0.1.0",
+    "axios": "^0.27.2",
     "chart.js": "^3.7.1",
     "next": "12.1.6",
     "pdfjs-dist": "2.12.313",
@@ -21,8 +20,11 @@
     "react-chartjs-2": "^4.1.0",
     "react-dom": "18.1.0",
     "react-modal-image": "^2.5.0",
-    "react-pdf": "^5.7.2",
-    "react-pdf-viewer": "^0.1.0"
+    "react-pdf-viewer": "^0.1.0",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",

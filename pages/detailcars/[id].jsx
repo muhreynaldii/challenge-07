@@ -3,8 +3,20 @@ import Container from "@components/Container";
 import Image from "next/image";
 import ModalImage from "react-modal-image";
 import Link from "next/link";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { getCar } from "@redux/action/carAction";
+import { useRouter } from "next/router";
 
-function detailcars() {
+function Index() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const { isLoading, data: searchData } = useSelector((state) => state.carID);
+  const { id } = router.query;
+
+  useEffect(() => {
+    dispatch(getCar(id));
+  }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <>
       <section className="relative h-[266px] w-full bg-slate-200">
@@ -127,17 +139,18 @@ function detailcars() {
         </div>
         <div className="h-[435px] w-1/3 rounded-lg border border-slate-200 shadow-sm">
           <div className="px-16 pt-7">
-            <ModalImage
-              small={"/fi-car.png"}
-              medium={"/fi-car.png"}
-              large={"/fi-car-large.png"}
-              showRotate={true}
-              imageBackgroundColor={"white"}
-            />
-            ;
+            {isLoading ? (
+              <div>Loading...</div>
+            ) : (
+              <ModalImage
+                small={searchData.image}
+                showRotate={true}
+                imageBackgroundColor={"white"}
+              />
+            )}
           </div>
           <div className="px-6">
-            <h1 className="pt-4 pb-1 text-sm font-bold">Nama/Tipe Mobil</h1>
+            <h1 className="pt-4 pb-1 text-sm font-bold">{searchData.name}</h1>
             <div className="flex py-2">
               <ul className="flex items-center space-x-1 text-xs">
                 <Image
@@ -168,7 +181,7 @@ function detailcars() {
             </div>
             <div className="flex justify-between pt-12">
               <p>Total</p>
-              <p className="font-bold">Rp 430.000</p>
+              <p className="font-bold">Rp {searchData.price}</p>
             </div>
             <Link href="/tiket">
               <a>
@@ -184,4 +197,4 @@ function detailcars() {
   );
 }
 
-export default detailcars;
+export default Index;

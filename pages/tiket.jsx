@@ -4,7 +4,7 @@ import { Viewer, Worker } from "@react-pdf-viewer/core";
 import { defaultLayoutPlugin } from "@react-pdf-viewer/default-layout";
 import { getFilePlugin } from "@react-pdf-viewer/get-file";
 
-function tiket() {
+function Tiket() {
   const defaultLayoutPluginInstance = defaultLayoutPlugin();
   const getFilePluginInstance = getFilePlugin();
   const { Download } = getFilePluginInstance;
@@ -56,7 +56,7 @@ function tiket() {
           Tunjukkan invoice ini ke petugas BCR di titik temu.
         </p>
       </div>
-      <div className="mx-auto w-[605px] rounded-lg bg-white p-6 shadow">
+      <div className="mx-auto mb-10 w-[605px] rounded-lg bg-white p-6 shadow">
         <div className="flex justify-between">
           <h1 className="text-sm font-bold">Invoice</h1>
           <Download>
@@ -84,4 +84,4 @@ function tiket() {
   );
 }
 
-export default tiket;
+export default Tiket;

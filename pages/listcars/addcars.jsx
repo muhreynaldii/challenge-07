@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Head from "next/head";
 import Bars from "@components/Bars";
 
-function addcars() {
+function Addcars() {
   return (
     <>
       <Head>
@@ -23,24 +24,42 @@ function addcars() {
             <div className="flex w-[85%] flex-col space-y-4">
               <input
                 type="text"
-                name="Nama"
-                id="Nama"
+                name="nama"
+                id="nama"
                 placeholder="Nama"
                 className="ml-36 w-[339px] rounded-sm border border-slate-300 py-2 px-3"
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    nama: e.target.value,
+                  })
+                }
               />
               <input
                 type="number"
-                name="Harga"
-                id="Harga"
+                name="harga"
+                id="harga"
                 placeholder="Harga"
                 className="ml-36 w-[339px] rounded-sm border border-slate-300 py-2 px-3"
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    harga: e.target.value,
+                  })
+                }
               />
               <input
-                type="text"
-                name="Foto"
-                id="Foto"
+                type="file"
+                name="foto"
+                id="foto"
                 placeholder="Foto"
                 className="ml-36 w-[339px] rounded-sm border border-slate-300 bg-[url('/fi-upload.png')] bg-right bg-no-repeat bg-origin-content py-2 px-3"
+                onChange={(e) =>
+                  setForm({
+                    ...form,
+                    foto: e.target.files,
+                  })
+                }
               />
               <span className="ml-36 text-xs text-slate-300">
                 File size max. 2MB
@@ -51,7 +70,12 @@ function addcars() {
             <button className="mr-4 rounded-sm border border-dark-blue-04 bg-white px-3 py-2 font-bold text-dark-blue-04">
               Cancel
             </button>
-            <button className="rounded-sm border bg-dark-blue-04 px-3 py-2 font-bold text-white">
+            <button
+              className="rounded-sm border bg-dark-blue-04 px-3 py-2 font-bold text-white"
+              onClick={() => {
+                handleSubmit();
+              }}
+            >
               Save
             </button>
           </div>
@@ -60,4 +84,4 @@ function addcars() {
     </>
   );
 }
-export default addcars;
+export default Addcars;

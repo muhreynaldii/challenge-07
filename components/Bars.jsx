@@ -13,6 +13,7 @@ function Bars({ children }) {
             layout="fixed"
             width={100}
             height={34}
+            priority
           />
         </div>
         <div className="w-3/5 cursor-pointer">
