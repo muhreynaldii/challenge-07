@@ -110,7 +110,7 @@ export default function Home() {
         </div>
         <div className="w-full lg:w-2/5">
           <h1 className="text-2xl">
-            Best Car Rental for any kind of trip in (Lokasimu)!
+            Best Car Rental for any kind of trip in Bandung!
           </h1>
           <p className="mt-6 mb-4">
             Sewa mobil di (Lokasimu) bersama Binar Car Rental jaminan harga
