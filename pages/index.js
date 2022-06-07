@@ -68,7 +68,7 @@ export default function Home() {
           <div className="mx-auto block py-4 md:flex">
             <div className="flex h-96 w-full flex-col items-center justify-center space-y-4 p-2 md:items-start md:p-0 xl:w-1/2">
               <h6 className="my-1 text-center text-2xl font-bold text-black md:text-left md:text-4xl">
-                Sewa & Rental Mobil Terbaik di kawasan (Lokasimu)
+                Sewa & Rental Mobil Terbaik di kawasan Bandung
               </h6>
               <p className="text-center md:text-left">
                 Selamat datang di Binar Car Rental. Kami menyediakan mobil
